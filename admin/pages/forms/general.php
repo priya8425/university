@@ -296,7 +296,7 @@ if(isset($_POST['submit']))
                   
                   <div class="col-md-6">
                   <div class="form-group col">
-                    <label for="exampleInputFile">Upload Icon</label>
+                    <label for="exampleInputFile">Upload Icons</label>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" name="upload_icon" id="exampleInputFile">
