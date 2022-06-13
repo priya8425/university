@@ -55,7 +55,7 @@ $id=$_GET['id'];
  <!--search overlay start-->
  <div class="search-wrap">
     <div class="overlay">
-        <form action="" class="search-form">
+        <!-- <form action="" class="search-form">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-9">
@@ -69,15 +69,19 @@ $id=$_GET['id'];
                     </div>
                 </div>
             </div>
-        </form>
+        </form> -->
     </div>
 </div>
 <!--search overlay end-->
-
+<!-- select courses.*, instructor.* from courses inner join instructor on courses.sr_no=instructor.sr_no -->
 <?php     
-    $sql=mysqli_query($conn,"select courses.*, instructor.* from courses inner join instructor on courses.sr_no=instructor.sr_no where courses.sr_no='$id'");
+    $sql=mysqli_query($conn,"select * from courses where courses.sr_no='$id'");
     while($arr=mysqli_fetch_array($sql)){
     ?>
+  <?php     
+    $sql=mysqli_query($conn,"select courses.*, instructor.* from courses inner join instructor on courses.sr_no=instructor.sr_no");
+    while($arr=mysqli_fetch_array($sql)){
+    ?>  
 <section class="page-wrapper edutim-course-single course-single-style-3">
     <div class="course-single-wrapper ad" style="background: url(admin/dist/img/background/<?php echo $arr['background_image'];?>);">
        <div class="container">
@@ -257,6 +261,7 @@ $id=$_GET['id'];
         <div class="tab-pane fade" id="nav-instructor" role="tabpanel" aria-labelledby="nav-instructor-tab">
             <div class="course-widget course-info">
                 <h4 class="course-title">About the instructors</h4>
+              
                 <div class="instructor-profile">
                     <div class="profile-img">
                         <img src="admin/dist/img/credit/<?php echo $arr['image'];?>" style="height:150px; width:150px;">
@@ -278,6 +283,7 @@ $id=$_GET['id'];
                         </div>
                     </div>
                 </div>
+                
             </div>
     </div>
             <div class="tab-pane fade" id="nav-feedback" role="tabpanel" aria-labelledby="nav-feedback-tab">
@@ -458,6 +464,7 @@ $id=$_GET['id'];
             
         </div>
     </div>
+    <?php } ?>
 </section>
    <?php } ?>
 
