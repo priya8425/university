@@ -215,7 +215,7 @@ include('configure.php');
               <div class="inner">
                 <h3>150</h3>
 
-                <p>New Orders</p>
+                <p>Courses</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -228,9 +228,9 @@ include('configure.php');
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>53<sup style="font-size: 20px"></sup></h3>
 
-                <p>Bounce Rate</p>
+                <p>Instructor</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -245,7 +245,7 @@ include('configure.php');
               <div class="inner">
                 <h3>44</h3>
 
-                <p>User Registrations</p>
+                <p>Students</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -271,6 +271,42 @@ include('configure.php');
           <!-- ./col -->
         </div>
         <!-- /.row -->
+        <div class="row" >
+          <div class="col-md-6">
+            
+        <div class="card">
+        <div class="card-body" >
+      
+
+              <div style="overflow-x:auto;">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                            
+                            <th>Courses</th>
+                           
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                  <?php     
+    $sql=mysqli_query($conn,"select * from courses");
+   
+    while($arr=mysqli_fetch_array($sql)){
+    ?>
+                    <tr>
+                  
+                    <td><?php echo $arr['course_name'];?></td>
+    </tr>
+    <?php }  ?>
+                  </tbody>
+
+                </table>
+          </div>
+          </div>
+          </div>
+          </div>
+    </div>
         <!-- Main row -->
         
         <!-- /.row (main row) -->
