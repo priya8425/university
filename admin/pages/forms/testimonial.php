@@ -10,7 +10,7 @@ if(isset($_GET['delsr_no'])){
 }
 if(isset($_POST['submit']))
     {
-        $description = $_POST['description'];
+        $description =mysqli_real_escape_string($conn,$_POST['description']);
         $about =$_POST['about'];
         $name = $_POST['name'];
      

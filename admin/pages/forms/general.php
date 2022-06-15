@@ -334,17 +334,26 @@ if(isset($_POST['submit']))
                     </select>
                   </div>
                  </div>
-                 </div>       
+                 </div>      
+                 <?php
+
+                  $sql = "SELECT * FROM `instructor`";
+                  $result = mysqli_query($conn, $sql);
+
+
+                  
+                 ?> 
                  
                  <div class="col-12 col-sm-6">
                 <div class="form-group col">
                   <label>Instructor</label>
                   <div class="select2-purple">
                     <select class="select2" multiple="multiple" name="instructor[]" data-placeholder="Select a Instructor" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                    <option>Vedant Naidu</option>
-                    <option>Divyani Keshri</option>
-                    <option>Mahesh Niwate</option>
-                    <option>Govind Bavkar</option>
+                   <?php
+                    while($row = mysqli_fetch_assoc($result)){
+                      ?> 
+                    <option value="<?php echo $row['id']?>"><?php echo $row['instructor']?></option>
+              <?php } ?>
                     </select>
                   </div>
                  </div>
@@ -480,7 +489,13 @@ if(isset($_POST['submit']))
 
            
             <!-- /.card -->
-          </div>
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <!--/.col (right) -->
+        
+
+    
           </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

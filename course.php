@@ -79,11 +79,11 @@ $id=$_GET['id'];
     while($arr=mysqli_fetch_array($sql)){
     ?>
   <?php     
-    $sql=mysqli_query($conn,"select courses.*, instructor.* from courses inner join instructor on courses.sr_no=instructor.sr_no");
+    $sql=mysqli_query($conn,"select courses.*, instructor.* from courses inner join instructor on courses.instructor=instructor.id where courses.sr_no='$id'");
     while($arr=mysqli_fetch_array($sql)){
     ?>  
 <section class="page-wrapper edutim-course-single course-single-style-3">
-    <div class="course-single-wrapper ad" style="background: url(admin/dist/img/background/<?php echo $arr['background_image'];?>);">
+    <div class="course-single-wrapper ad" style="background: url(admin/dist/img/background/<?php echo $arr['background_image'];?>); background-attachment:fixed;">
        <div class="container">
            <div class="row">
                <div class="col-lg-8 shadow" style="margin-top: 10%; margin-bottom: 5%">

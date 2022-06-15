@@ -60,36 +60,7 @@
               </p>
               </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../../../webdevelopment.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Web Designing</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../../appdevelopment.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>App Development</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../../digitalmarketing.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Digital Marketing</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../../graphicdesigning.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Graphic Designing</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../../hardware&networking.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Hardware and Networking</p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="general.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

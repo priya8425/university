@@ -11,7 +11,7 @@ if(isset($_GET['delsr_no'])){
 if(isset($_POST['submit']))
     {
         $instructor = $_POST['instructor'];
-        $about =$_POST['about'];
+        $about =mysqli_real_escape_string($conn,$_POST['about']);
         $courses = $_POST['courses'];
         $students = $_POST['students'];
         $image=$_FILES['image']['name'];
@@ -276,8 +276,7 @@ if(isset($_POST['submit']))
                   <div class="col-md-6">
                   <div class="form-group col">
                     <label for="exampleInputEmail1">About Instructor</label>
-                    <textarea class="form-control" value="" name="about" >
-                    </textarea>
+                    <textarea class="form-control" name="about"></textarea>
                   </div>
                   </div>
                  
@@ -351,7 +350,7 @@ if(isset($_POST['submit']))
                     <td><?php echo $arr['students'];?></td>
                       <td> <a href="advanced.php"><button type="button" class="btn btn-primary btn-md" style="color: aliceblue"> <i class="fas fa-pen"></i></button></a>
                       
-                      <a href="advanced.php?delsr_no=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-md" style="color: aliceblue"> <i class="fas fa-trash"></i></button></a>
+                      <a href="advanced.php?delsr_no=<?php echo $arr['id'];?>"><button type="button" class="btn btn-danger btn-md" style="color: aliceblue"> <i class="fas fa-trash"></i></button></a>
                     </tr>
                     <?php $count++; }  ?>
 
