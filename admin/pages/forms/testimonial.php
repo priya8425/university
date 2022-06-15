@@ -1,6 +1,10 @@
 <?php
 include('configure.php');
-
+session_start();
+if(!isset($_SESSION['id'])) // If session is not set then redirect to Login Page
+{
+ header("Location:login.php"); 
+}
 if(isset($_GET['delsr_no'])){
   $sr_no=mysqli_real_escape_string($conn,$_GET['delsr_no']);
   $sql=mysqli_query($conn,"delete from testimonial where id='$sr_no'");

@@ -1,5 +1,10 @@
 <?php
 include('configure.php');
+session_start();
+if(!isset($_SESSION['id'])) // If session is not set then redirect to Login Page
+{
+ header("Location:login.php"); 
+}
 
 if(isset($_GET['delsr_no'])){
   $sr_no=mysqli_real_escape_string($conn,$_GET['delsr_no']);
@@ -348,7 +353,7 @@ if(isset($_POST['submit']))
                     
                     <td><?php echo $arr['courses'];?></td>
                     <td><?php echo $arr['students'];?></td>
-                      <td> <a href="advanced.php"><button type="button" class="btn btn-primary btn-md" style="color: aliceblue"> <i class="fas fa-pen"></i></button></a>
+                      <td><button type="button" class="btn btn-primary btn-md button1" data-id='<?php echo $arr['id']?>' style="color: aliceblue"> <i class="fas fa-pen"></i></button></a>
                       
                       <a href="advanced.php?delsr_no=<?php echo $arr['id'];?>"><button type="button" class="btn btn-danger btn-md" style="color: aliceblue"> <i class="fas fa-trash"></i></button></a>
                     </tr>
@@ -377,6 +382,28 @@ if(isset($_POST['submit']))
           </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
+
+      <div class="modal fade closemaual" id="dnkModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post">
+      <div class="modal-body body2">
+      </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary" name="leaveEdit">Save changes</button>
+    </div>
+                                                            </form>
+  </div>
+  </div>
+</div>
+
+
     </section>
     <!-- /.content -->
   </div>
@@ -557,6 +584,25 @@ if(isset($_POST['submit']))
     myDropzone.removeAllFiles(true)
   }
   // DropzoneJS Demo Code End
+</script>
+<script>
+$(document).ready(function(){
+$('.button1').click(function(){
+  let dnkk = $(this).data('id');
+
+  $.ajax({
+   url: 'check.php',
+   type: 'post',
+   data: {dnkk: dnkk},
+   success: function(response2){ 
+     $('.body2').html(response2);
+     $('#dnkModal1').modal('show'); 
+   }
+ });
+});
+
+
+});
 </script>
 </body>
 </html>

@@ -94,6 +94,13 @@ if(isset($_POST["login"])){
   $row = mysqli_fetch_array($result);  
   $count = mysqli_num_rows($result);
 	if($count==1){
+
+
+
+
+    $_SESSION['id']=$row['id'];
+    $_SESSION['name']=$row['name'];
+    
     echo "<SCRIPT> //not showing me this
         alert('login sucess')
         window.location.replace('dashboard.php');
