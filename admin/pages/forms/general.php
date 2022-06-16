@@ -15,7 +15,7 @@ if(isset($_GET['delsr_no'])){
 if(isset($_POST['submit']))
     {
         $course_name= $_POST['course_name'];
-        $description =$_POST['description'];
+        $description =mysqli_real_escape_string($conn,$_POST['description']);
         $overview = $_POST['overview'];
         $price = $_POST['price'];
         $tags = $_POST['tags'];

@@ -265,12 +265,8 @@ include('configure.php');
 
             <div class="text-center">
                 <ul class="course-filter">
-                    <li class="active"><a href="#" data-filter="*"> All</a></li>
-                    <li><a href="#" data-filter=".cat1">Web Development</a></li>
-                    <li><a href="#" data-filter=".cat2">App Development</a></li>
-                    <li><a href="#" data-filter=".cat3">media</a></li>
-                    <li><a href="#" data-filter=".cat4">Graphic Designing</a></li>
-                    <li><a href="#" data-filter=".cat5">Hardware & Networking</a></li>
+                    <li class="active"><a href="#" data-filter="*"> All Courses</a></li>
+                    
                 </ul>
             </div>
 

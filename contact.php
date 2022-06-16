@@ -83,7 +83,7 @@ include('configure.php');
               </li>
               <li class="list-inline-item">/</li>
               <li class="list-inline-item">
-                  Contact
+              <a href="#">Contact</a>
               </li>
             </ul>
           </div>

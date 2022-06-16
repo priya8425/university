@@ -23,21 +23,25 @@
 						<li><a href="about.php">About us</a></li>
 						<li><a href="contact.php">Contact us</a></li>
 						<li><a href="courses.php">Courses</a></li>
-						<li><a href="#">Terms & Condition</a></li>
-						<li><a href="#">Refund policy</a></li>
-						<li><a href="#">Privacy policy</a></li>
+						
 					</ul>
 				</div>
 			</div>
+			<?php
+
+$sql="select * from courses";
+$result=mysqli_query($conn,$sql);
+?>
 			<div class="col-lg-2 col-sm-6 col-md-6">
 				<div class="footer-widget mb-5 mb-lg-0">
 					<h5 class="widget-title">Courses</h5>
 					<ul class="list-unstyled footer-links">
-						<li><a href="webdevelopment.php">Web Development</a></li>
-						<li><a href="appdevelopment.php">App Development</a></li>
-						<li><a href="digitalmarketing.php">Digital Marketing</a></li>
-						<li><a href="graphicdesigning.php">Graphic Designing</a></li>
-						<li><a href="hardware&networking.php">Hardware and Networking</a></li>
+					<?php
+                            while($row=mysqli_fetch_assoc($result)){
+                            ?>
+						<li><a href="course.php?id=<?php echo $row['sr_no']?>"> <?php echo $row['course_name']?></a></li>
+						<?php } ?>
+						
 					</ul>
 				</div>
 			</div>
