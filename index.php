@@ -91,54 +91,28 @@ include('configure.php');
 
 <section class="category-section2">
     <div class="container">
+    <?php
+
+$sql="select * from courses";
+$result=mysqli_query($conn,$sql);
+?>
         <div class="row no-gutters" >
             <div class="course-categories">
+            <?php
+                            while($row=mysqli_fetch_assoc($result)){
+                            ?>
                 <div class="category-item category-bg-1">
-                  <a href="webdevelopment.php">
+                  <a href="course.php?id=<?php echo $row['sr_no']?>">
                     <div class="category-icon">
                         <i class="bi bi-laptop"></i>
                     </div>
-                    <h4>Web Development</h4>
+                    <h4> <?php echo $row['course_name']?></h4>
                     
                   </a>
                 </div>
-                <div class="category-item category-bg-2">
-                    <a href="appdevelopment.php">
-                        <div class="category-icon">
-                            <i class="bi bi-android"></i>
-                        </div>
-                        <h4>App Development</h4>
-                        
-                    </a>
-                </div>
-                <div class="category-item category-bg-3">
-                   <a href="digitalmarketing.php">
-                    <div class="category-icon">
-                        <i class="bi bi-target-arrow"></i>
-                    </div>
-                    <h4>Digital Marketing</h4>
-                    
-                   </a>
-                </div>
-
-                <div class="category-item category-bg-4">
-                   <a href="graphicdesigning.php">
-                    <div class="category-icon">
-                        <i class="bi bi-rocket2"></i>
-                    </div>
-                    <h4>Graphic Designing</h4>
-                  
-                   </a>
-                </div>
-                <div class="category-item category-bg-5">
-                   <a href="hardware&networking.php">
-                    <div class="category-icon">
-                        <i class="bi bi-shield"></i>
-                    </div>
-                    <h4>Hardware & Networking</h4>
-                   
-                   </a>
-                </div>
+               
+           
+           <?php } ?>
             </div>
         </div>
     </div>

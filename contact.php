@@ -79,11 +79,11 @@ include('configure.php');
             <h1>Contact Us</h1>
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <a href="index.php">Home</a>
               </li>
               <li class="list-inline-item">/</li>
               <li class="list-inline-item">
-              <a href="#">Contact</a>
+              <a href="contact.php">Contact</a>
               </li>
             </ul>
           </div>
