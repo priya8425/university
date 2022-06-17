@@ -355,7 +355,7 @@ $result=mysqli_query($conn,$sql);
                 </div>
                 <div class="col-lg-6">
         
-                    <video id="video" width="300" height="300" controls controlList="nodownload">
+                    <video id="video" width="300" height="300" controls controlsList="nodownload">
                         <source type="video/mp4" preload="auto" src="video.mp4">
                        
                     </video>
@@ -653,8 +653,8 @@ var scrollHandler = function() {
 };
 // add the scrollHandler
 window.addEventListener('scroll', scrollHandler, true);
-// don't forget to update the positions again if we do resize the page
 window.addEventListener('resize', checkPos);
+// don't forget to update the positions again if we do resize the page
 
     </script>
 
