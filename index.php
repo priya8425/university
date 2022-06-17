@@ -355,8 +355,8 @@ $result=mysqli_query($conn,$sql);
                 </div>
                 <div class="col-lg-6">
         
-                    <video width="300" height="300" autoplay controls>
-                        <source src="video.mp4" type="video/mp4">
+                    <video id="video" width="300" height="300" controls controlList="nodownload">
+                        <source type="video/mp4" preload="auto" src="video.mp4">
                        
                     </video>
                 </div>
@@ -563,6 +563,16 @@ $result=mysqli_query($conn,$sql);
     <!-- Bootstrap 4.5 -->
     <script src="assets/vendors/bootstrap/bootstrap.js"></script>
     <!-- Counterup -->
+    <script type="text/javascript">
+            $(function () {
+                $('[id*=video]').mouseenter(function () {
+                    $(this).get(0).play();
+                });
+                $('[id*=video]').mouseout(function () {
+                    $(this).get(0).pause();
+                });
+            });
+        </script>
     <script src="assets/vendors/counterup/waypoint.js"></script>
     <script src="assets/vendors/counterup/jquery.counterup.min.js"></script>
     <script src="assets/vendors/jquery.isotope.js"></script>
