@@ -188,9 +188,10 @@ include('configure.php');
             </div>
             <div class="col-lg-6">
                 <div class="subscribe-form">
-                    <form action="#">
+                    <form  method="POST" action="maill.php" >
                         <input type="text" class="form-control" placeholder="Email Address">
-                        <a href="#" class="btn btn-main">Subscribe<i class="fa fa-angle-right ml-2"></i> </a>
+                        <a href="maill.php" type="submit" class="btn btn-main">Subscribe<i class="fa fa-angle-right ml-2"></i> </a>
+                        
                     </form>
                 </div>
             </div>

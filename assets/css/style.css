@@ -1602,8 +1602,8 @@ VIDEO SECTION
   font-size: 60px;
 }
 
-.video-section2 .video-block-container {
-
+/* .video-section2 .video-block-container {
+  background-image: url("../../../university/video/promo.mp4");
   background-repeat: no-repeat;
   background-size: cover;
   width: 50%;
@@ -1612,7 +1612,7 @@ VIDEO SECTION
   right: 0px;
   top: 0px;
   height: 100%;
-}
+} */
 
 .video-section2 .video-block-container:before {
   position: absolute;
