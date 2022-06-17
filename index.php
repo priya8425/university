@@ -344,7 +344,7 @@ $result=mysqli_query($conn,$sql);
 
     <!--course section start-->
     <section class="section-padding video-section2 clearfix" >
-        <div class="video-block-container"></div>
+        <div class="video-block-container"></div>       
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -354,12 +354,13 @@ $result=mysqli_query($conn,$sql);
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <a href="#"  class="video-icon"><i class="fa fa-play"></i></a>
-                    <video  controls autoplay>
-                        <source src="/images/bg/weborapp.mp4" type="video/mp4">
-                        <source src="/images/bg/weborapp.mp4.ogg" type="video/ogg">
+                   
+                    <video width="300" height="300" autoplay>
+                        <source src="video.mp4" type="video/mp4">
+                       
                     </video>
                 </div>
+               
             </div>
         </div>
         <!--course-->
