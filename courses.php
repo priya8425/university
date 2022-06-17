@@ -89,11 +89,11 @@ include('configure.php');
             <h1>courses</h1>
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <a href="index.php">Home</a>
               </li>
               <li class="list-inline-item">/</li>
               <li class="list-inline-item">
-                  Courses
+              <a href="courses.php">Courses</a>
               </li>
             </ul>
           </div>
