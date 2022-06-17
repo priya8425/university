@@ -372,8 +372,7 @@ if(isset($_POST['submit']))
 
            
             <!-- /.card -->
-          </div>
-          </div>
+         
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
