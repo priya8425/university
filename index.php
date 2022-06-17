@@ -354,8 +354,8 @@ $result=mysqli_query($conn,$sql);
                     </div>
                 </div>
                 <div class="col-lg-6">
-                   
-                    <video width="300" height="300" autoplay>
+        
+                    <video width="300" height="300" autoplay controls>
                         <source src="video.mp4" type="video/mp4">
                        
                     </video>
