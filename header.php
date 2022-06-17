@@ -74,11 +74,11 @@
 $sql="select * from courses";
 $result=mysqli_query($conn,$sql);
 ?>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" >
                             <a class="nav-link dropdown-toggle active3" href="courses.php" id="navbar3" role="button" aria-haspopup="true" aria-expanded="false">
                                 Courses<i class="fa fa-angle-down"></i>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbar3">
+                            <div class="dropdown-menu" aria-labelledby="navbar3" >
                             <?php
                             while($row=mysqli_fetch_assoc($result)){
                             ?>
@@ -91,7 +91,7 @@ $result=mysqli_query($conn,$sql);
                         </li>
                
                 
-                        <li class="nav-item ">
+                        <li class="nav-item " style="margin-right:30px;">
                             <a href="contact.php" class="nav-link   active4" id="navbar3">
                                 Contact
                             </a>
