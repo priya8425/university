@@ -355,7 +355,7 @@ $result=mysqli_query($conn,$sql);
                 </div>
                 <div class="col-lg-6">
         
-                    <video id="video" width="300" height="300" controls controlsList="nodownload">
+                    <video id="video" width="800" height="700" controls controlsList="nodownload">
                         <source type="video/mp4" preload="auto" src="video.mp4">
                        
                     </video>
