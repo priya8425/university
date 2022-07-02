@@ -2,7 +2,6 @@
 include("configure.php");
 
 if(isset($_POST['signup'])){
-    $status=1;
     $email=$_POST['email'];  
   $from = 'Enquiry <'.$email.'>' . "\r\n";
   $sendTo = 'Enquiry <'.$email.'>';
@@ -40,8 +39,8 @@ if(isset($_POST['signup'])){
     }
    if( mail($sendTo,$subject,$emailText, "From:" .$from)){
   
-    $sql=mysqli_query($conn,"INSERT INTO `subscriber`(`email`,`status`) 
-     VALUES ('$email','$status')");
+    $sql=mysqli_query($conn,"INSERT INTO `subscribe`(`subscriber`) 
+     VALUES ('$email')");
      if($sql=1){
        echo "<script>alert('Agent Registered Successfully');</script>";    }
      else{
