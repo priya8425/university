@@ -76,8 +76,8 @@ if(isset($_POST['signup'])){
                 <div class="subscribe-form">
                     <form method="post">
                         <input type="text" class="form-control" placeholder="Email Address" name="email">
-                        <button type=
-                        "signup" class="btn btn-main">Subscribe<i class="fa fa-angle-right ml-2"></i> </a>
+                        <button type="submit"
+                        name="signup" class="btn btn-main">Subscribe<i class="fa fa-angle-right ml-2"></i> </a>
                     </form>
                 </div>
             </div>
