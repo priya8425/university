@@ -1,6 +1,5 @@
 <?php
-
-include('../forms/configure.php');
+include('../../../configure.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

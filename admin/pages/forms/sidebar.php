@@ -45,7 +45,7 @@
               
               <p>
              Dashboard
-                <i class="fas fa-angle-left right"></i>
+                
                
               </p>
             </a>
@@ -75,7 +75,7 @@
               <i class="nav-icon fas fa-user"></i>
               <p>
                Instructor
-                <i class="fas fa-angle-left right"></i>
+               
                
               </p>
             </a>
@@ -105,7 +105,7 @@
               <i class="nav-icon fas fa-copy"></i>
               <p>
               Logout
-                <i class="fas fa-angle-left right"></i>
+               
                
               </p>
             </a>

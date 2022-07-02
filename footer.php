@@ -8,10 +8,10 @@
 					<p> <b>Tectignis IT Solutions Pvt. Ltd </b>the University has established itself as high skills &
 						 education provider with focus on holistic learning and imbibing abilities in students.</p>
 					<ul class="list-inline footer-socials">
-						<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="list-inline-item"> <a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.facebook.com/tectignisofficial/"><i class="fab fa-facebook-f"></i></a></li>
+						
+						<li class="list-inline-item"><a href="https://www.instagram.com/tectignisofficial/"><i class="fab fa-instagram"></i></a></li>
+						
 					</ul>
 				</div>
 			</div>

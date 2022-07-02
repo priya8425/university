@@ -145,9 +145,10 @@ $result=mysqli_query($conn,$sql);
                     </div>
                     
                     <div class="course-content">
-                        <div class="course-price "><?php echo $arr['price'];?></div>   
+                        <div class="course-price "><?php echo $arr['price'];?></div>  
+                         
                         
-                        <h4><a href="webdevelopment.php"><?php echo $arr['course_name'];?></a></h4>    
+                        <h4><a href="course.php?id=<?php echo $arr['sr_no']?>"><?php echo $arr['course_name'];?></a></h4>    
                         <div class="rating">
                             <a href="#"><i class="fa fa-star"></i></a>
                             <a href="#"><i class="fa fa-star"></i></a>
@@ -239,7 +240,7 @@ $result=mysqli_query($conn,$sql);
 
             <div class="text-center">
                 <ul class="course-filter">
-                    <li class="active"><a href="#" data-filter="*"> All Courses</a></li>
+                    <li class="active"><a href="courses.php" data-filter="*"> All Courses</a></li>
                     
                 </ul>
             </div>
@@ -260,7 +261,7 @@ $result=mysqli_query($conn,$sql);
                         <div class="course-content">
                             <div class="course-price "><?php echo $arr['price'];?></span></div>   
                             
-                            <h4><a href="hardware&networking.php"><?php echo $arr['course_name'];?></a></h4>    
+                            <h4><a href="course.php?id=<?php echo $arr['sr_no']?>"><?php echo $arr['course_name'];?></a></h4>    
                             <div class="rating">
                                 <a href="#"><i class="fa fa-star"></i></a>
                                 <a href="#"><i class="fa fa-star"></i></a>
@@ -355,7 +356,7 @@ $result=mysqli_query($conn,$sql);
                 </div>
                 <div class="col-lg-6">
         
-                    <video id="video" width="800" height="700" controls controlsList="nodownload">
+                    <video id="video" width="350" height="400" controls controlsList="nodownload">
                         <source type="video/mp4" preload="auto" src="video.mp4">
                        
                     </video>
@@ -445,9 +446,9 @@ $result=mysqli_query($conn,$sql);
                         <p><?php echo $arr['about'];?></p>
 
                         <ul class="team-socials list-inline">
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.facebook.com/tectignisofficial/"><i class="fab fa-facebook-f"></i></a></li>
+                           
+                            <li class="list-inline-item"><a href="https://www.instagram.com/tectignisofficial/"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -524,26 +525,7 @@ $result=mysqli_query($conn,$sql);
         </div>
     </div>
 </section> -->
-<section class="cta-2">
-    <div class="container">
-        <div class="row align-items-center subscribe-section ">
-            <div class="col-lg-6">
-                <div class="section-heading black-text">
-                    <span class="subheading">Newsletter</span>
-                    <h3>Join our community of students</h3>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="subscribe-form">
-                    <form action="#">
-                        <input type="text" class="form-control" placeholder="Email Address">
-                        <a href="#" class="btn btn-main">Subscribe<i class="fa fa-angle-right ml-2"></i> </a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<?php include("newsletter.php")?>
 
 <?php include("footer.php")?>
 

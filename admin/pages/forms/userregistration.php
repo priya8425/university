@@ -1,5 +1,5 @@
 <?php
-include('configure.php');
+include('../../../configure.php');
 
 if(isset($_POST['sub']))
     {
