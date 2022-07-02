@@ -1,5 +1,5 @@
 <?php
-include"admin/include/config.php";
+include("configure.php");
 
 if(isset($_POST['signup'])){
     $status=1;
