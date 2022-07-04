@@ -165,7 +165,7 @@ $result=mysqli_query($conn,$sql);
                                 <span class="course-duration"><?php echo $arr['duration'];?><i class="bi bi-badge3"></i></span>
                             </div> 
                            
-                            <div class="buy-btn"><a href="webdevelopment.php" class="btn btn-main-2 btn-small">Details</a></div>
+                            <div class="buy-btn"><a href="course.php?id=<?php echo $arr['sr_no']?>" class="btn btn-main-2 btn-small">Details</a></div>
                         </div>
                     </div>
                 </div>
@@ -278,7 +278,7 @@ $result=mysqli_query($conn,$sql);
                                     <span class="course-duration"><i class="bi bi-badge3"></i> <?php echo $arr['lessons'];?></span>
                                 </div> 
                             
-                                <div class="buy-btn"><a href="hardware&networking.php" class="btn btn-main-2 btn-small">Details</a></div>
+                                <div class="buy-btn"><a href="course.php?id=<?php echo $arr['sr_no']?>" class="btn btn-main-2 btn-small">Details</a></div>
                             </div>
                         </div>
                     </div>
