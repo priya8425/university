@@ -30,7 +30,7 @@ if(isset($_POST['sub']))
     else {
       echo "<script> alert ('connection failed !');</script>";
    }
-  }
+  } 
 ?>
 
 <!DOCTYPE html>
