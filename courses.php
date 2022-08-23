@@ -127,7 +127,7 @@ include('configure.php');
             $sql=mysqli_query($conn,"Select * from courses");
                while($arr=mysqli_fetch_array($sql)){
              ?>
-                    <li><a href="course.php?id=<?php echo $arr['sr_no']?>"
+                    <li><a href="course.php?course_name=<?php echo $arr['course_name']?>"
                             data-filter=".cat1"><?php echo $arr['course_name']?></a></li>
                             <?php } ?>
                 </ul>
@@ -157,7 +157,7 @@ include('configure.php');
                                     <a href="#"><i class="fa fa-star"></i></a>
                                     <span>(5.00)</span>
                                 </div>
-                                <h4><a href="appdevelopment.php"> <?php echo $arr['course_name'];?></a></h4>
+                                <h4><a href="course/<?php echo $arr['course_name'] ?>"> <?php echo $arr['course_name'];?></a></h4>
 
                                 <div class="course-meta">
                                     <span class="course-student"><i class="bi bi-group"></i>57 Students</span>

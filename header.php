@@ -82,7 +82,7 @@ $result=mysqli_query($conn,$sql);
                             <?php
                             while($row=mysqli_fetch_assoc($result)){
                             ?>
-                                <a class="dropdown-item  activa1" href="course.php?id=<?php echo $row['sr_no']?>">
+                                <a class="dropdown-item  activa1" href="course/<?php echo $row['course_name']?>">
                                 <?php echo $row['course_name']?>
                                </a>
                                <?php } ?>

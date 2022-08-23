@@ -1,10 +1,11 @@
 <?php
 include('configure.php');
-$id=$_GET['id'];
+$id=$_GET['course_name'];
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
+    <base href="/public_html/" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="edutim,coaching, distant learning, education html, health coaching, kids education, language school, learning online html, live training, online courses, online training, remote training, school html theme, training, university html, virtual training  ">
   
@@ -75,11 +76,11 @@ $id=$_GET['id'];
 <!--search overlay end-->
 <!-- select courses.*, instructor.* from courses inner join instructor on courses.sr_no=instructor.sr_no -->
 <?php     
-    $sql=mysqli_query($conn,"select * from courses where courses.sr_no='$id'");
+    $sql=mysqli_query($conn,"select * from courses where course_name='$id'");
     while($arr=mysqli_fetch_array($sql)){
     ?>
   <?php     
-    $sql=mysqli_query($conn,"select courses.*, instructor.* from courses inner join instructor on courses.instructor=instructor.id where courses.sr_no='$id'");
+    $sql=mysqli_query($conn,"select courses.*, instructor.* from courses inner join instructor on courses.instructor=instructor.id where courses.course_name='$id'");
     while($arr=mysqli_fetch_array($sql)){
     ?>  
 <section class="page-wrapper edutim-course-single course-single-style-3">
