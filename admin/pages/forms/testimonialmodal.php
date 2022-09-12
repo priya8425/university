@@ -3,7 +3,7 @@ include('../../../configure.php');
 ?>
 <?php
 if(isset($_POST['dnk3'])){
-  $query=mysqli_query($conn,"select * from instructor where id='".$_POST['dnk3']."'");
+  $query=mysqli_query($conn,"select * from testimonial where id='".$_POST['dnk3']."'");
   $row=mysqli_fetch_array($query);
   echo ' 
   <div class="row">
@@ -15,7 +15,7 @@ if(isset($_POST['dnk3'])){
       <div class="input-group">
       <input type="hidden" name="id" value="'.$row['id'].'">
          
-        <input class="form-control" placeholder="course name" name="instructor" type="text" value="'.$row['instructor'].'" data-dtp="dtp_dl6pL">
+        <input class="form-control" placeholder="course name" name="description" type="text" value="'.$row['description'].'" data-dtp="dtp_dl6pL">
         
       </div>
     </div>
@@ -43,26 +43,13 @@ if(isset($_POST['dnk3'])){
   </label>
   <div class="input-group">
    
-    <textarea class="form-control" placeholder="price" name="courses">'.$row['courses'].'</textarea>
+    <textarea class="form-control" placeholder="price" name="name">'.$row['name'].'</textarea>
     
   </div>
 </div>
 </div>
 </div>
-<div class="row">
-<div class="col-md-12">
-<div class="form-group">
-  <label for="date">
-  Price <span class="text-danger">*</span>
-  </label>
-  <div class="input-group">
-   
-    <textarea class="form-control" placeholder="price" name="students">'.$row['students'].'</textarea>
-    
-  </div>
-</div>
-</div>
-</div>
+
  <div class="row">
  <div class="col-md-12">
 <div class="form-group">

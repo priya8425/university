@@ -40,7 +40,25 @@ if(isset($_POST['submit']))
           echo "<script> alert ('connection failed !');</script>";
        }
     }
-  ?>
+    if(isset($_POST['testedit1'])){
+      $id=$_POST['id'];
+      $description = $_POST['description'];
+     $image=$_FILES['image']['name'];
+    $dnk=$_FILES['image']['tmp_name'];
+    $loc="../../dist/img/credit/".$image;
+      move_uploaded_file($dnk,$loc);
+      $about =$_POST['about'];
+      $name = $_POST['name'];
+     
+      $sql="UPDATE `testimonial` SET `description`='$description',`image`='$image',`about`='$about',`name`='$name' WHERE id='$id'";
+      if (mysqli_query($conn, $sql)){
+       
+        echo "<script>alert('Successfully Updated');</script>";
+     } else {
+        echo "<script> alert ('connection failed !');window.location.href='advanced.php'</script>";
+     }
+    }
+    ?>
 
 
 
@@ -347,7 +365,9 @@ if(isset($_POST['submit']))
                     
                     <td><?php echo $arr['name'];?></td>
                     <td><?php echo $arr['about'];?></td>
-                      <td> <a href="testimonial.php"><button type="button" class="btn btn-primary btn-md" style="color: aliceblue"> <i class="fas fa-pen"></i></button></a>
+                      <td> <button type="button" class="btn btn-sm btn-primary btn-rounded btn-icon testedit btn-sm"
+                            data-toggle="modal" data-id='<?php echo $arr['id']; ?>' style="color: aliceblue"> <i
+                              class="fas fa-pen"></i></button>
                       
                       <a href="testimonial.php?delsr_no=<?php echo $arr['id']; ?>"><button type="button" class="btn btn-danger btn-md" style="color: aliceblue"> <i class="fas fa-trash"></i></button></a>
                     </tr>
@@ -393,7 +413,27 @@ if(isset($_POST['submit']))
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<div class="modal fade closemaual" id="dnkModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+          <div class="modal-body body5">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" name="testedit1">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -556,5 +596,27 @@ if(isset($_POST['submit']))
   }
   // DropzoneJS Demo Code End
 </script>
+<script>
+    $(document).ready(function () {
+      $('.testedit').click(function () {
+        let dnk3 = $(this).data('id');
+
+        $.ajax({
+          url: 'testimonialmodal.php',
+          type: 'post',
+          data: {
+            dnk3: dnk3
+          },
+          success: function (response5) {
+            $('.body5').html(response5);
+            $('#dnkModal4').modal('show');
+          }
+        });
+      });
+
+
+    });
+
+  </script>
 </body>
 </html>
