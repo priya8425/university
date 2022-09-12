@@ -5,7 +5,7 @@ $id=$_GET['course_name'];
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <base href="/public_html/" />
+    <base href="/public_html/"/>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="edutim,coaching, distant learning, education html, health coaching, kids education, language school, learning online html, live training, online courses, online training, remote training, school html theme, training, university html, virtual training  ">
   
