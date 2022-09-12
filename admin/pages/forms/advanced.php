@@ -378,7 +378,7 @@ if(isset($_POST['submit']))
                         <td><?php echo $arr['courses'];?></td>
                         <td><?php echo $arr['students'];?></td>
                         <td><button type="button" class="btn btn-sm btn-primary btn-rounded btn-icon testedit btn-sm"
-                            data-toggle="modal" data-id='<?php echo $arr['sr_no']; ?>' style="color: aliceblue"> <i
+                            data-toggle="modal" data-id='<?php echo $arr['id']; ?>' style="color: aliceblue"> <i
                               class="fas fa-pen"></i></button>
 
                           <a href="advanced.php?delsr_no=<?php echo $arr['id'];?>"><button type="button"

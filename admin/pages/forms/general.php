@@ -358,8 +358,8 @@ $loc="../../dist/img/background/".$upload_icon;
                           <div class="select2-purple">
                             <select class="select2" multiple="multiple" name="tags[]" data-placeholder="Select a Tag"
                               data-dropdown-css-class="select2-purple" style="width: 100%;">
-                              <option>Web Design</option>
-                              <option>HTML</option>
+                              <option>Digital Marketing</option>
+                              <option>Graphics Designing</option>
                               <option>CSS</option>
                               <option>PHP</option>
                               <option>JAVA</option>
@@ -407,10 +407,9 @@ $loc="../../dist/img/background/".$upload_icon;
                           <label for="exampleInputPassword1">Skill Level</label>
                           <select class="form-control select2" style="width: 100%;" name="skill_level">
                             <option selected="selected">Beginner</option>
-                            <option>Delaware</option>
-                            <option>Beginner</option>
-                            <option>Texas</option>
-                            <option>Beginner</option>
+                            <option>Advanced</option>
+                            <option>Intermediate</option>
+                            <option>Expert</option>
                           </select>
                         </div>
                       </div>
@@ -420,7 +419,7 @@ $loc="../../dist/img/background/".$upload_icon;
                         <div class="form-group col">
                           <label for="exampleInputPassword1">Language</label>
                           <select class="form-control select2" style="width: 100%;" name="language">
-                            <option selected="selected">English</option>
+                            <option selected="selected">English & Hindi</option>
                             <option>Hindi</option>
                             <option>Marathi</option>
                           </select>
