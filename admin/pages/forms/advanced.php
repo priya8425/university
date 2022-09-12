@@ -630,7 +630,7 @@ if(isset($_POST['submit']))
         let dnk3 = $(this).data('id');
 
         $.ajax({
-          url: 'generalmodal.php',
+          url: 'advancedmodal.php',
           type: 'post',
           data: {
             dnk3: dnk3

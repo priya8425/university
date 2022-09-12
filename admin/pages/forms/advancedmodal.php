@@ -43,7 +43,21 @@ if(isset($_POST['dnk3'])){
   </label>
   <div class="input-group">
    
-    <textarea class="form-control" placeholder="price" name="price">'.$row['price'].'</textarea>
+    <textarea class="form-control" placeholder="price" name="price">'.$row['courses'].'</textarea>
+    
+  </div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+  <label for="date">
+  Price <span class="text-danger">*</span>
+  </label>
+  <div class="input-group">
+   
+    <textarea class="form-control" placeholder="price" name="price">'.$row['students'].'</textarea>
     
   </div>
 </div>
@@ -56,7 +70,7 @@ if(isset($_POST['dnk3'])){
 Image   <span class="text-danger">*</span>
 </label>
 <div class="input-group">
-<input type="file" class="form-control" value="'.$row['upload_icon'].'" name="upload_icon" >
+<input type="file" class="form-control" value="'.$row['image'].'" name="upload_icon" >
 
 </div>
 </div>
