@@ -54,11 +54,31 @@ if(isset($_POST['submit']))
           echo "<script> alert ('connection failed !');</script>";
        }
     }
-  ?>
 
 
+    
 
 
+if(isset($_POST['testedit1'])){
+  $sr_no= $_POST['sr_no'];
+  $course_name = $_POST['course_name'];
+ $upload_icon=$_FILES['upload_icon']['name'];
+$dnk=$_FILES['upload_icon']['tmp_name'];
+$loc="../../dist/img/background/".$upload_icon;
+  move_uploaded_file($dnk,$loc);
+  $duration = $_POST['duration'];
+  $price = $_POST['price'];
+ 
+ 
+  $sql="UPDATE `courses` SET `course_name`='$course_name',`upload_icon`='$upload_icon',`duration`='$duration',`price`='$price' WHERE sr_no='$sr_no'";
+  if (mysqli_query($conn, $sql)){
+   
+    echo "<script>alert('Successfully Updated');</script>";
+ } else {
+    echo "<script> alert ('connection failed !');window.location.href='general.php'</script>";
+ }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -341,6 +361,9 @@ if(isset($_POST['submit']))
                               <option>Web Design</option>
                               <option>HTML</option>
                               <option>CSS</option>
+                              <option>PHP</option>
+                              <option>JAVA</option>
+                              <option>C++</option>
                               <option>DEVELOPMENT</option>
                             </select>
                           </div>
@@ -363,8 +386,8 @@ if(isset($_POST['submit']))
                               data-placeholder="Select a Instructor" data-dropdown-css-class="select2-purple"
                               style="width: 100%;">
                               <?php
-                    while($row = mysqli_fetch_assoc($result)){
-                      ?>
+                              while($row = mysqli_fetch_assoc($result)){
+                                ?>
                               <option value="<?php echo $row['id']?>"><?php echo $row['instructor']?></option>
                               <?php } ?>
                             </select>
@@ -479,9 +502,10 @@ if(isset($_POST['submit']))
 
                         <td><?php echo $arr['price'];?></td>
 
-                        <td> 
-                        <button data-dismiss="modal" aria-label="Close" type="button"
-                              class="btn btn-primary btn-md dnodal"data-id="<?php echo $arr['id'] ?>" style="color: aliceblue" > <i class="fas fa-pen"></i></button>
+                        <td>
+                          <button type="button" class="btn btn-sm btn-primary btn-rounded btn-icon testedit btn-sm"
+                            data-toggle="modal" data-id='<?php echo $arr['sr_no']; ?>' style="color: aliceblue"> <i
+                              class="fas fa-pen"></i></button>
 
                           <a href="general.php?delsr_no=<?php echo $arr['sr_no']; ?>"><button type="button"
                               class="btn btn-danger btn-md" style="color: aliceblue"> <i
@@ -503,65 +527,54 @@ if(isset($_POST['submit']))
                 </div>
 
 
-                <div class="modal fade" id="dnkModal">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h4 class="modal-title">Edit </h4>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <form method="post" action="featuremodalform.php" enctype="multipart/form-data">
-                          <div class=" modal-body body1">
 
-                          </div>
-                        </form>
-
-
-                      </div>
-                      <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                  </div>
               </div>
+              <!-- /.card -->
+
+
+              <!-- /.card -->
             </div>
-            <!-- /.card -->
-
-
-            <!-- /.card -->
           </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <!--/.col (right) -->
-
-
-
-        </div>
-
-
-        
-        <!-- /.row -->
-    </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.2.0
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
     </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="float-right d-none d-sm-block">
+        <b>Version</b> 3.2.0
+      </div>
+      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
-
+  <div class="modal fade closemaual" id="dnkModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+          <div class="modal-body body5">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" name="testedit1">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   <!-- jQuery -->
   <script src="../../plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
@@ -736,24 +749,27 @@ if(isset($_POST['submit']))
 
   </script>
 
-<script>
+  <script>
     $(document).ready(function () {
-      $('.dnodal').click(function () {
-        let dnkid = $(this).data('id');
+      $('.testedit').click(function () {
+        let dnk3 = $(this).data('id');
 
         $.ajax({
           url: 'generalmodal.php',
           type: 'post',
           data: {
-            dnkid: dnkid
+            dnk3: dnk3
           },
-          success: function (response1) {
-            $('.body1').html(response1);
-            $('#dnkModal').modal('show');
+          success: function (response5) {
+            $('.body5').html(response5);
+            $('#dnkModal4').modal('show');
           }
         });
       });
+
+
     });
+
   </script>
 </body>
 

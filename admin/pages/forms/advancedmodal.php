@@ -3,7 +3,7 @@ include('../../../configure.php');
 ?>
 <?php
 if(isset($_POST['dnk3'])){
-  $query=mysqli_query($conn,"select * from courses where sr_no='".$_POST['dnk3']."'");
+  $query=mysqli_query($conn,"select * from instructor where sr_no='".$_POST['dnk3']."'");
   $row=mysqli_fetch_array($query);
   echo ' 
   <div class="row">
@@ -15,7 +15,7 @@ if(isset($_POST['dnk3'])){
       <div class="input-group">
       <input type="hidden" name="sr_no" value="'.$row['sr_no'].'">
          
-        <input class="form-control" placeholder="course name" name="course_name" type="text" value="'.$row['course_name'].'" data-dtp="dtp_dl6pL">
+        <input class="form-control" placeholder="course name" name="course_name" type="text" value="'.$row['instructor'].'" data-dtp="dtp_dl6pL">
         
       </div>
     </div>
@@ -29,7 +29,7 @@ if(isset($_POST['dnk3'])){
   </label>
   <div class="input-group">
    
-    <textarea class="form-control" placeholder="duration" name="duration">'.$row['duration'].'</textarea>
+    <textarea class="form-control" placeholder="duration" name="duration">'.$row['about'].'</textarea>
     
   </div>
 </div>
